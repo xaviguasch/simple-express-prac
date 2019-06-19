@@ -11,6 +11,7 @@ const shopRoutes = require('./routes/shop')
 app.get('/favicon.ico', (req, res) => res.status(204)) // boilerplate code, conflict with favicon
 
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/admin', adminRoutes)
 app.use(shopRoutes)
